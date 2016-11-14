@@ -1,0 +1,23 @@
+{
+  "name": "uptime-check",
+  "version": "0.0.1",
+  "description": "Node website uptime checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sznowicki/uptime-check.git"
+  },
+  "keywords": [
+    "uptime",
+    "curl"
+  ],
+  "author": "Szymon Nowicki <sznowicki@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sznowicki/uptime-check/issues"
+  },
+  "homepage": "https://github.com/sznowicki/uptime-check#readme"
+}
