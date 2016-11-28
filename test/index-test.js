@@ -4,9 +4,9 @@ const assert = chai.assert;
 
 const check = require('../index');
 
-
 const correctUrl = 'https://agentslug.com';
 const redirectUrl = 'http://agentslug.com';
+
 const propertiesRequired = [
   'httpCode',
   'httpCodeLang',
