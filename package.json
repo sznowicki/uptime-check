@@ -1,23 +1,32 @@
 {
   "name": "uptime-check",
-  "version": "0.0.2",
-  "description": "Node website uptime checker",
+  "version": "0.1.0",
+  "description": "Node website uptime checker (built on top of node-libcurl)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "cover": "istanbul cover _mocha -- --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sznowicki/uptime-check.git"
+    "url": "https://github.com/sznowicki/uptime-check.git"
   },
   "keywords": [
     "uptime",
-    "curl"
+    "curl",
+    "node-libcurl",
+    "libcurl"
   ],
   "author": "Szymon Nowicki <sznowicki@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sznowicki/uptime-check/issues"
   },
-  "homepage": "https://github.com/sznowicki/uptime-check#readme"
+  "homepage": "https://github.com/sznowicki/uptime-check#readme",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "node-libcurl": "^1.0.0"
+  }
 }
