@@ -31,6 +31,8 @@ function makeRequest(options) {
           connectTime: curl.getInfo('CONNECT_TIME'),
           preTransferTime: curl.getInfo('PRETRANSFER_TIME'),
           startTransferTime: curl.getInfo('STARTTRANSFER_TIME'),
+          effectiveUrl: curl.getInfo('EFFECTIVE_URL'),
+          redirectsCount: curl.getInfo('REDIRECT_COUNT')
         };
         curl.close.bind(curl);
 

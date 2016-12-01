@@ -4,7 +4,7 @@ const assert = chai.assert;
 
 const check = require('../index');
 
-const correctUrl = 'https://agentslug.com';
+const correctUrl = 'https://agentslug.com/';
 const redirectUrl = 'http://agentslug.com';
 
 const propertiesRequired = [
@@ -19,7 +19,9 @@ const propertiesRequired = [
   'bodySize',
   'header',
   'body',
-  'status'
+  'status',
+  'redirectsCount',
+  'effectiveUrl'
 ];
 
 describe('Uptime test', function () {
@@ -80,6 +82,8 @@ describe('Uptime test', function () {
         result.httpCode.should.be.a('number');
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(true);
+        result.effectiveUrl.should.be.equal(correctUrl);
+        result.redirectsCount.should.be.equal(1);
 
         return done();
       })
