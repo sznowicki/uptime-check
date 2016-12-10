@@ -15,7 +15,7 @@ function makeRequest(options) {
     setCurlOpts(curl, options);
 
     curl.on('error', (err, errorCode) => {
-      curl.close.bind(curl);
+      curl.close();
       return reject(err);
     });
 
@@ -34,7 +34,7 @@ function makeRequest(options) {
           effectiveUrl: curl.getInfo('EFFECTIVE_URL'),
           redirectsCount: curl.getInfo('REDIRECT_COUNT')
         };
-        curl.close.bind(curl);
+        curl.close();
 
         result.headerSize = headerRaw.toString().length;
         const bodySize = responseString.length - result.headerSize;
@@ -46,7 +46,7 @@ function makeRequest(options) {
         result.body = body;
         result.response = responseString;
       } catch (err) {
-        curl.close.bind(curl);
+        curl.close();
         return reject(err);
       }
 
