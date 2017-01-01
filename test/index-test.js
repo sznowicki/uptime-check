@@ -6,6 +6,7 @@ const check = require('../index');
 
 const correctUrl = 'https://agentslug.com/';
 const redirectUrl = 'http://agentslug.com';
+const notFoundUrl = 'https://agentslug.com/404-link';
 
 const propertiesRequired = [
   'httpCode',
@@ -101,10 +102,6 @@ describe('Uptime test', function () {
       redirectsLimit: 0,
     })
       .then(result => {
-        assert(false, 'Uptime should fail but promise is resolved.');
-        return done();
-      })
-      .catch((result) => {
         propertiesRequired.forEach(property => {
           result.should.have.property(property);
         });
@@ -112,6 +109,19 @@ describe('Uptime test', function () {
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(false);
         return done();
+      })
+  });
+});
+
+describe('Downtime test', function() {
+  it(`should test ${notFoundUrl} and fail`, function(done) {
+    this.timeout(4000);
+    check({
+      url: notFoundUrl,
+    })
+      .then(result => {
+        result.status.should.be.equal(false);
+        done();
       })
   });
 });

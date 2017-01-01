@@ -31,9 +31,8 @@ check({
     }
     */
   })
-  .catch((result, err) => {
+  .catch((err) => {
     /*
-    result = '{object|undefined} object if test failed (result.status === false), undefined when for some reason curl failed to proceed';
     err = '{Error} error passed from node-libcurl';
     */
   });

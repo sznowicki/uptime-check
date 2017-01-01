@@ -24,14 +24,10 @@ function check(opts) {
           result.status = result.body.indexOf(options.keyword) > -1;
         }
 
-        if (!result.status) {
-          return reject(result);
-        }
-
         return resolve(result);
       })
       .catch(err => {
-        return reject(undefined, err);
+        return reject(err);
       })
   });
 }
