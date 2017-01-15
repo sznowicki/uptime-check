@@ -1,4 +1,5 @@
 const Curl = require('node-libcurl').Curl;
+const headerParser = require('header-parse');
 const HTTPCodesToLang = require('../lang/http-codes-to-lang');
 /**
  * Makes curl request and prepares
@@ -45,6 +46,7 @@ function makeRequest(options) {
         result.header = header;
         result.body = body;
         result.response = responseString;
+        result.headersParsed = headerParser.parseHeaders(result.header);
       } catch (err) {
         curl.close();
         return reject(err);

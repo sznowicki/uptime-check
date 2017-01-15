@@ -39,6 +39,7 @@ describe('Uptime test', function () {
         result.httpCode.should.be.a('number');
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(true);
+        result.headersParsed.should.be.an('object');
 
         return done();
       })
@@ -61,6 +62,7 @@ describe('Uptime test', function () {
         result.httpCode.should.be.a('number');
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(true);
+        result.headersParsed.should.be.an('object');
 
         return done();
       })
@@ -85,6 +87,7 @@ describe('Uptime test', function () {
         result.status.should.be.equal(true);
         result.effectiveUrl.should.be.equal(correctUrl);
         result.redirectsCount.should.be.equal(1);
+        result.headersParsed.should.be.an('object');
 
         return done();
       })
@@ -108,6 +111,7 @@ describe('Uptime test', function () {
         result.httpCode.should.be.a('number');
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(false);
+        result.headersParsed.should.be.an('object');
         return done();
       })
   });

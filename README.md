@@ -27,6 +27,7 @@ check({
       bodySize: '{number} body size (length)',
       body: '{string} body (response without header)',
       header: '{string} header (response without body)',
+      headersParsed: '{Object} parsed headers',
       status: '{bool} true if test passed, false if failed',
     }
     */
