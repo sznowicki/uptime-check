@@ -22,6 +22,7 @@ check({
       connectTime: '{number} see curl documentation',
       preTransferTime: '{number} see curl documentation',
       startTransferTime: '{number} see curl documentation',
+      effectiveUrl: '{string} see curl documentation',
       response: '{string} full response (header + body)',
       headerSize: '{number} header size (length)',
       bodySize: '{number} body size (length)',
