@@ -1,6 +1,6 @@
 {
   "name": "uptime-check",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Node website uptime checker (built on top of node-libcurl)",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "header-parse": "^0.1.0",
-    "node-libcurl": "^1.0.0"
+    "node-libcurl": "^1.1.0"
   }
 }
