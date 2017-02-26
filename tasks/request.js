@@ -40,7 +40,7 @@ function makeRequest(options) {
         result.headerSize = headerRaw.toString().length;
         const bodySize = responseString.length - result.headerSize;
         const header = responseString.slice(0, result.headerSize);
-        const body = responseString.slice(result.headerSize, bodySize);
+        const body = responseString.slice(result.headerSize, responseString.length);
 
         result.bodySize = bodySize;
         result.header = header;

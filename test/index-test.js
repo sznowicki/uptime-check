@@ -40,6 +40,8 @@ describe('Uptime test', function () {
         result.httpCodeLang.should.be.a('string');
         result.status.should.be.equal(true);
         result.headersParsed.should.be.an('object');
+        // non regression - not full body is gathered
+        result.body.length.should.be.equal(result.bodySize);
 
         return done();
       })
