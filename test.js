@@ -1,7 +1,7 @@
 const check = require('./index');
 
 check({
-  url: 'http://agentslug.com',
+  url: 'https://agentslug.com',
   redirectsLimit: 2
 })
   .then(res => {
