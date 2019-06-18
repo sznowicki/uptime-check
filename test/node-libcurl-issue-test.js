@@ -3,7 +3,7 @@ const { Curl } = require('node-libcurl');
 const makeCall = () => new Promise((resolve, reject) => {
   const curl = new Curl();
 
-  curl.setOpt('URL', 'https://example.com');
+  curl.setOpt('URL', 'http://localhost');
 
   curl.on('error', () => reject());
 
@@ -17,6 +17,23 @@ const makeCall = () => new Promise((resolve, reject) => {
 
 
 describe('Promisified curl call test', () => {
+  it('should success, pure curl', (done) => {
+    const curl = new Curl();
+
+    curl.setOpt('URL', 'https://example.com');
+
+    curl.on('error', () => {
+      throw new Error('PURE ERROR')
+    });
+
+    curl.on('end', () => {
+      console.log('PURE DONE');
+      done()
+    });
+
+    curl.perform();
+  });
+
   it('should resolve', (done) => {
     makeCall()
       .then(() => {
@@ -31,5 +48,6 @@ describe('Promisified curl call test', () => {
 
   it('should resolve (async/await way)', async () => {
     await makeCall();
+    console.warn('ASYNC/AWAIT DONE');
   });
 });
