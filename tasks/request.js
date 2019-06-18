@@ -1,4 +1,4 @@
-const Curl = require('node-libcurl').Curl;
+const { Curl, CurlFeature }= require('node-libcurl');
 const headerParser = require('header-parse');
 const HTTPCodesToLang = require('../lang/http-codes-to-lang');
 /**
@@ -60,7 +60,7 @@ function makeRequest(options) {
 
 function setCurlOpts(curl, options) {
   /* features */
-  curl.enable(Curl.feature.RAW);
+  curl.enable(CurlFeature.Raw);
   /* dynamic */
   curl.setOpt('URL', options.url);
   curl.setOpt('FOLLOWLOCATION', options.redirectsLimit ? 1 : 0);
