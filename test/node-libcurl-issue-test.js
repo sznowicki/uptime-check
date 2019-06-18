@@ -4,6 +4,8 @@ const makeCall = () => new Promise((resolve, reject) => {
   const curl = new Curl();
 
   curl.setOpt('URL', 'http://localhost');
+  curl.setOpt('CONNECTTIMEOUT', 1);
+  curl.setOpt('TIMEOUT', 1);
 
   curl.on('error', () => reject());
 
