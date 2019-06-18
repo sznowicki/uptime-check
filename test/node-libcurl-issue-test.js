@@ -1,6 +1,9 @@
 const { Curl } = require('node-libcurl');
 
 const makeCall = () => new Promise((resolve, reject) => {
+  // Uncomment to resolve without Curl callbacks.
+  // setTimeout(() => resolve(), 1000);
+  // return;
   const curl = new Curl();
 
   curl.setOpt('URL', 'http://localhost');
