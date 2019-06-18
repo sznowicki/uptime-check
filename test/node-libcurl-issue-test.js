@@ -28,4 +28,8 @@ describe('Promisified curl call test', () => {
         done();
       })
   });
+
+  it('should resolve (async/await way)', async () => {
+    await makeCall();
+  });
 });
