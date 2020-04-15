@@ -1,4 +1,6 @@
 # Uptime check
+[![npm version](https://badge.fury.io/js/uptime-check.svg)](https://badge.fury.io/js/uptime-check) [![Coverage Status](https://coveralls.io/repos/github/sznowicki/uptime-check/badge.svg?branch=master)](https://coveralls.io/github/sznowicki/uptime-check?branch=master)
+
 Checks uptime status of given url and provided keyword (optional).
 
 ## How it works

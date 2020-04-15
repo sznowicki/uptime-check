@@ -1,11 +1,11 @@
 {
   "name": "uptime-check",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Node website uptime checker (built on top of node-libcurl)",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
-    "cover": "istanbul cover _mocha -- --recursive"
+    "cover": "nyc --reporter=lcov yarn test"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,13 @@
   },
   "homepage": "https://github.com/sznowicki/uptime-check#readme",
   "devDependencies": {
+    "assert": "^2.0.0",
     "chai": "^4.2.0",
-    "mocha": "^6.0.2"
+    "mocha": "^6.0.2",
+    "nyc": "^15.0.1"
   },
   "dependencies": {
     "header-parse": "^0.1.0",
-    "node-libcurl": "1.3.3"
+    "node-libcurl": "^2.1.0"
   }
 }
