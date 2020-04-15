@@ -4,3 +4,4 @@ npm-debug.log
 test.js
 package-lock.json
 .nyc_output
+coverage/*
