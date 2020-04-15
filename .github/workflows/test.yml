@@ -8,15 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js 11.x
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: 11.x
-      - name: install
-        run: |
-          yarn install
-          yarn cover
-
+          node-version: 10.x
+      - name: Install
+        run: yarn install
+      - name: Test
+        run: yarn cover
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
