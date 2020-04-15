@@ -1,0 +1,23 @@
+on: ["push", "pull_request"]
+
+name: Test Coveralls
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 11.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 11.x
+      - name: install
+        run: |
+          yarn install
+          yarn cover
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
