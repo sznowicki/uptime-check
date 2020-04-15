@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/sznowicki/uptime-check#readme",
   "devDependencies": {
+    "assert": "^2.0.0",
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
     "nyc": "^15.0.1"

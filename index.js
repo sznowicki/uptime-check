@@ -11,7 +11,6 @@ function check(opts) {
     try {
       validateOptions(options)
     } catch (err) {
-
       return reject(err);
     }
 
@@ -60,8 +59,14 @@ function validateOptions(opts) {
       throw new Error(`Invalid option: ${key} must be an integer number`);
     }
   });
-}
-/**
+
+  strings.forEach(key => {
+    if (opts[key] && typeof opts[key] !== 'string') {
+      throw new Error(`Invalid option: ${key} must be a string.`);
+    }
+ });
+ }
+ /**
  * Merges options with defaults.
  * @param {Object} opts
  * @returns {Object}
