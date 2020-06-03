@@ -4,8 +4,8 @@
   "description": "Node website uptime checker (built on top of node-libcurl)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
-    "cover": "nyc --reporter=lcov yarn test"
+    "test": "jest",
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -24,10 +24,7 @@
   },
   "homepage": "https://github.com/sznowicki/uptime-check#readme",
   "devDependencies": {
-    "assert": "^2.0.0",
-    "chai": "^4.2.0",
-    "mocha": "^6.0.2",
-    "nyc": "^15.0.1"
+    "jest": "^26.0.1"
   },
   "dependencies": {
     "got": "^11.2.0",
