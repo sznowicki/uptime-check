@@ -20,6 +20,20 @@ const makeResponse = async (options) => {
       return error.response;
     }
 
+    if (error.code) {
+      return {
+        statusCode: 0,
+        url: options.url,
+        request: {
+          redirects: [],
+        },
+        headers: {},
+        body: '',
+        bodySize: 0,
+        errorCode: error.code,
+      }
+    }
+
     throw error;
   }
 };
@@ -46,6 +60,7 @@ const makeRequest = async (options) => {
     headers: response.headers,
     body: response.body,
     bodySize: response.body.length,
+    errorCode: response.errorCode,
   };
 
   return result;

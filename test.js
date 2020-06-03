@@ -1,7 +1,7 @@
 const check = require('./index');
 
 check({
-  url: 'http://api.agentslug.com',
+  url: 'https://expired.badssl.com',
   keyword: 'agentslugdsfdsfsfsdfd',
   redirectsLimit: 2
 })

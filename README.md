@@ -20,24 +20,20 @@ check({
     result = {
       httpCode: '{number}',
       httpCodeLang: 'English translation for http code (e.x. "Bad Request")',
-      nameLookupTime: '{number} see curl documentation',
-      connectTime: '{number} see curl documentation',
-      preTransferTime: '{number} see curl documentation',
-      startTransferTime: '{number} see curl documentation',
       effectiveUrl: '{string} see curl documentation',
       response: '{string} full response (header + body)',
-      headerSize: '{number} header size (length)',
-      bodySize: '{number} body size (length)',
       body: '{string} body (response without header)',
-      header: '{string} header (response without body)',
-      headersParsed: '{Object} parsed headers',
+      bodyLength: '{Number} body.length'
+      headers: '{Object} parsed headers',
       status: '{bool} true if test passed, false if failed',
+      totalTime: '{Number} total request time',
+      errorCode: '{String} in case of request error, e.x. ETIMEDOUT',
     }
     */
   })
   .catch((err) => {
     /*
-    err = '{Error} error passed from node-libcurl';
+    err = '{Error} unexpected error.';
     */
   });
 ```
