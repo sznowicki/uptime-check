@@ -35,7 +35,7 @@ const makeRequest = async (options) => {
   const now = Date.now();
   const codesToLang = new HTTPCodesToLang(options.timeOut);
   const response = await makeResponse(options);
-  const totalTime = ((Date.now() - now) / 1000).toFixed(4);
+  const totalTime = (Date.now() - now) / 1000;
 
   const result = {
     httpCode: response.statusCode,

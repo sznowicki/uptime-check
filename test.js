@@ -1,7 +1,8 @@
 const check = require('./index');
 
 check({
-  url: 'http://agentslug.com',
+  url: 'http://api.agentslug.com',
+  keyword: 'agentslugdsfdsfsfsdfd',
   redirectsLimit: 2
 })
   .then(res => {
