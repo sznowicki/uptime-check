@@ -7,6 +7,7 @@ chai.should();
 const correctUrl = 'https://agentslug.com/en';
 const redirectUrl = 'http://agentslug.com';
 const notFoundUrl = 'https://agentslug.com/404-link';
+const invalidUrl = 'invalidurl';
 
 const propertiesRequired = [
   'httpCode',
@@ -134,6 +135,13 @@ describe('index', () => {
   });
 
   describe('Error handling', () => {
+    it('should reject on invalid url', () => {
+      assert.rejects(() => {
+        return check({
+          url: invalidUrl,
+        });
+      });
+    });
     it('should reject on missing url', () => {
       assert.rejects(() => {
         return check({});
