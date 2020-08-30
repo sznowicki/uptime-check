@@ -6,7 +6,7 @@ Checks uptime status of given url and provided keyword (optional).
 ## How it works
 Makes simple curl requests, gathers data on response and if requested also is looking for a keyword inside the document body.
 
-If http code (response) is 2xx website is considered "up". If there is a keyword given for search but the keyword cannot be found in the document body, website is considered "down".
+If http code (response) is 2xx website is considered "up". If there is a keyword given for search, but the keyword cannot be found in the document body, website is considered "down".
 
 ## Example usage
 ```javascript
