@@ -27,7 +27,7 @@
     "jest": "^26.0.1"
   },
   "dependencies": {
-    "got": "^11.2.0",
+    "got": "^11.7.0",
     "header-parse": "^0.1.0"
   }
 }
