@@ -1,4 +1,11 @@
 # Changelog
+
+## v3.0.0
+### Breaking changes
+- A node-libcurl package is no longer being used in favor of `got`. This might lead to slightly different performance.
+- Removed following properties from result: `nameLookupTime`, `connectTime`, `preTransferTime`, `startTransferTime`, `response`, `headerSize`, `header`, `headersParsed`
+- Added `headers` property to result which now contains parsed headers object.
+
 ## v2.0.1
 ### Dependency updates
 - node-libcurl update to v.2.1.1+

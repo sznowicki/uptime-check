@@ -1,35 +1,4 @@
-const curlRequest = require('./tasks/request');
-
-/**
- *
- * @param {Object} opts
- * @returns {Promise}
- */
-function check(opts) {
-  return new Promise((resolve, reject) => {
-    const options = mergeDefaults(opts);
-    try {
-      validateOptions(options)
-    } catch (err) {
-      return reject(err);
-    }
-
-    curlRequest(options)
-      .then(result => {
-        const httpCode = result.httpCode;
-
-        result.status = (httpCode >= 200 && httpCode < 300);
-        if (result.status && options.keyword) {
-          result.status = result.body.indexOf(options.keyword) > -1;
-        }
-
-        return resolve(result);
-      })
-      .catch(err => {
-        return reject(err);
-      })
-  });
-}
+const request = require('./tasks/request');
 
 /**
  * Validates options. Throws Error if something is wrong.
@@ -37,7 +6,7 @@ function check(opts) {
  * @param {Object} opts
  * @throws Error
  */
-function validateOptions(opts) {
+const validateOptions = (opts) => {
   const keysRequired = [
     'url'
   ];
@@ -49,6 +18,7 @@ function validateOptions(opts) {
     'keyword',
     'url'
   ];
+
   keysRequired.forEach(key => {
     if (!opts.hasOwnProperty(key)) {
       throw new Error(`Missing required option: ${key}`);
@@ -64,14 +34,20 @@ function validateOptions(opts) {
     if (opts[key] && typeof opts[key] !== 'string') {
       throw new Error(`Invalid option: ${key} must be a string.`);
     }
- });
- }
- /**
+  });
+
+  // Only http and https can be tested.
+  if (opts.url.startsWith('http') === false) {
+    throw new Error('Url must be http:// or https://');
+  }
+}
+
+/**
  * Merges options with defaults.
  * @param {Object} opts
  * @returns {Object}
  */
-function mergeDefaults(opts) {
+const mergeDefaults = (opts) => {
   const defaults = {
     keyword: null,
     redirectsLimit: 3,
@@ -81,5 +57,26 @@ function mergeDefaults(opts) {
 
   return Object.assign({}, defaults, opts);
 }
+
+/**
+ *
+ * @param {Object} opts
+ * @returns {Promise}
+ */
+const check = async (opts) => {
+  const options = mergeDefaults(opts);
+  validateOptions(options)
+
+  const result = await request(options);
+
+  const httpCode = result.httpCode;
+
+  result.status = (httpCode >= 200 && httpCode < 300);
+  if (result.status && options.keyword) {
+    result.status = result.body.indexOf(options.keyword) > -1;
+  }
+  return result;
+}
+
 
 module.exports = check;
