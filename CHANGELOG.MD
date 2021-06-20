@@ -1,4 +1,7 @@
 # Changelog
+## v3.1.0
+### Changed
+- Updated dependencies.
 
 ## v3.0.0
 ### Breaking changes
