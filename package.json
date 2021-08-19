@@ -18,6 +18,9 @@
     "libcurl"
   ],
   "author": "Szymon Nowicki <sznowicki@gmail.com>",
+  "contributors": [
+    "Lucian I. Last <li@last.nl>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sznowicki/uptime-check/issues"
