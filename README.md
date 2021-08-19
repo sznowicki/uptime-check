@@ -20,14 +20,14 @@ check({
     result = {
       httpCode: '{number}',
       httpCodeLang: 'English translation for http code (e.x. "Bad Request")',
-      effectiveUrl: '{string} see curl documentation',
+      effectiveUrl: '{string} last url in the redirects chain',
       response: '{string} full response (header + body)',
       body: '{string} body (response without header)',
       bodyLength: '{Number} body.length'
       headers: '{Object} parsed headers',
       status: '{bool} true if test passed, false if failed',
       totalTime: '{Number} total request time',
-      errorCode: '{String} in case of request error, e.x. ETIMEDOUT',
+      errorCode: '{String} in case of request error, e.g. ETIMEDOUT',
     }
     */
   })
