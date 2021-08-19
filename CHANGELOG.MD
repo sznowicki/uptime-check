@@ -1,4 +1,9 @@
 # Changelog
+
+## v3.2.0
+### Documentation
+- Added index.d.ts (thank you https://github.com/lil5)
+
 ## v3.1.0
 ### Changed
 - Updated dependencies.
