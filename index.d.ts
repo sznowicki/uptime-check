@@ -16,7 +16,7 @@ declare module "uptime-check" {
 		url: string;
 		keyword?: string;
 		redirectsLimit?: number;
-		userAgent?: string;
+		headers?: object;
 		timeOut?: string;
 	}
 
