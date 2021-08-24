@@ -18,6 +18,9 @@ const validateOptions = (opts) => {
     'keyword',
     'url'
   ];
+  const objects = [
+    'headers'
+  ];
 
   keysRequired.forEach(key => {
     if (!opts.hasOwnProperty(key)) {
@@ -36,6 +39,12 @@ const validateOptions = (opts) => {
     }
   });
 
+  objects.forEach(key => {
+    if (opts[key] && typeof opts[key] !== 'object') {
+      throw new Error(`Invalid option: ${key} must be an object.`);
+    }
+  });
+
   // Only http and https can be tested.
   if (opts.url.startsWith('http') === false) {
     throw new Error('Url must be http:// or https://');
@@ -51,7 +60,9 @@ const mergeDefaults = (opts) => {
   const defaults = {
     keyword: null,
     redirectsLimit: 3,
-    userAgent: 'Generic curl robot',
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+    },
     timeOut: 10
   };
 
