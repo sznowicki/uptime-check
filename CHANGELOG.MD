@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.0.1
+### Dependency removed
+- Removed `header-parse` unused dependency.
+
 ## v4.0.0
 ### BREAKING CHANGE
 - Removed `userAgent` option in favor of `headers`. Please check [migration notes](./README.md#v4-migration).
