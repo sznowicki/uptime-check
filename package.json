@@ -30,7 +30,6 @@
     "jest": "^27.0.6"
   },
   "dependencies": {
-    "got": "^11.8.2",
-    "header-parse": "^0.1.0"
+    "got": "^11.8.2"
   }
 }

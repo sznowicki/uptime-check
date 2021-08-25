@@ -1523,11 +1523,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-header-parse@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/header-parse/-/header-parse-0.1.0.tgz#e644bc35bdcd5adcf7fc112d2eb65bcc6c1a8675"
-  integrity sha1-5kS8Nb3NWtz3/BEtLrZbzGwahnU=
-
 html-encoding-sniffer@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-2.0.1.tgz#42a6dc4fd33f00281176e8b23759ca4e4fa185f3"
