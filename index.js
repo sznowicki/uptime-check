@@ -3,7 +3,7 @@ const request = require('./tasks/request');
 /**
  * Validates options. Throws Error if something is wrong.
  *
- * @param {Object} opts
+ * @param {UptimeCheckOptions} opts
  * @throws Error
  */
 const validateOptions = (opts) => {
@@ -53,8 +53,8 @@ const validateOptions = (opts) => {
 
 /**
  * Merges options with defaults.
- * @param {Object} opts
- * @returns {Object}
+ * @param {UptimeCheckOptions} opts
+ * @returns {UptimeCheckOptions}
  */
 const mergeDefaults = (opts) => {
   const defaults = {
@@ -71,10 +71,14 @@ const mergeDefaults = (opts) => {
 
 /**
  *
- * @param {Object} opts
- * @returns {Promise}
+ * @param {UptimeCheckOptions} opts
+ * @returns {Promise<UptimeCheckResult>}
  */
 const check = async (opts) => {
+  /**
+   *
+   * @type {UptimeCheckOptions}
+   */
   const options = mergeDefaults(opts);
   validateOptions(options)
 
@@ -86,6 +90,7 @@ const check = async (opts) => {
   if (result.status && options.keyword) {
     result.status = result.body.indexOf(options.keyword) > -1;
   }
+
   return result;
 }
 

@@ -130,6 +130,13 @@ describe('index', () => {
           url: true,
         });
       }).rejects.toThrow();
+
+      expect(() => {
+        return check({
+          url: 'https://example.com',
+          headers: true,
+        })
+      }).rejects.toThrow();
     });
   });
 });

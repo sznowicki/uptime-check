@@ -28,18 +28,7 @@ check({
 })
   .then(result => {
     /*
-    result = {
-      httpCode: '{number}',
-      httpCodeLang: 'English translation for http code (e.x. "Bad Request")',
-      effectiveUrl: '{string} last url in the redirects chain',
-      response: '{string} full response (header + body)',
-      body: '{string} body (response without header)',
-      bodyLength: '{Number} body.length'
-      headers: '{Object} parsed headers',
-      status: '{bool} true if test passed, false if failed',
-      totalTime: '{Number} total request time',
-      errorCode: '{String} in case of request error, e.g. ETIMEDOUT',
-    }
+        see index.d.ts:Result
     */
   })
   .catch((err) => {

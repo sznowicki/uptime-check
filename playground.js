@@ -9,15 +9,15 @@ const main = async () => {
       redirectsLimit: 2
     })
 
-    console.log(badSSL.status, badSSL.httpCode);
+    console.log(badSSL.status, badSSL.httpCode, badSSL);
 
     const result = await check({
-      url: 'https://agentslug.com',
+      url: 'https://agentslug.com/dsfsdfsd',
       keyword: 'agent',
       redirectsLimit: 2
     });
 
-    console.log(result.status, result.httpCode);
+    console.log(result, result.httpCode);
 
   } catch (error) {
 
