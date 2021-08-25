@@ -7,9 +7,7 @@ const makeOptions = (options) => ({
   followRedirect: options.redirectsLimit > 0,
   maxRedirects: options.redirectsLimit,
   timeout: options.timeOut * 1000,
-  headers: {
-    'User-Agent': options.userAgent,
-  }
+  headers: options.headers
 });
 
 const makeResponse = async (options) => {
