@@ -1,0 +1,8 @@
+.github
+**/__tests__/**
+**/coverage/**
+.editorconfig
+playground.js
+.idea
+npm-debug.log
+package-lock.json

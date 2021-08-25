@@ -1,8 +1,12 @@
 # Changelog
 
-## v4.0.1
+## v4.1.0
 ### Dependency removed
 - Removed `header-parse` unused dependency.
+
+### Cleanups
+- Documentation updated along with types defined index.d.ts.
+- Introduce [.npmignore](./.npmignore) which decreases package size from 145.3 kB to 10 kB
 
 ## v4.0.0
 ### BREAKING CHANGE
