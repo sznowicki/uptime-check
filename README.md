@@ -8,6 +8,17 @@ Makes simple curl requests, gathers data on response and if requested also is lo
 
 If http code (response) is 2xx website is considered "up". If there is a keyword given for search, but the keyword cannot be found in the document body, website is considered "down".
 
+## v4 migration
+From version 4 there is no `userAgent` option any more. If you used this, please migrate to:
+
+```js
+check({
+  headers: {
+      'User-Agent': 'Your custom UA string',
+  }
+});
+```
+
 ## Example usage
 ```javascript
 check({

@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.0.0
+### BREAKING CHANGE
+- Removed `userAgent` option in favor of `headers`. Please check [migration notes](./README.md#v4-migration).
+
 ## v3.2.0
 ### Documentation
 - Added index.d.ts (thank you https://github.com/lil5)
