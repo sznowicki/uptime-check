@@ -88,7 +88,8 @@ const check = async (opts) => {
 
   result.status = (httpCode >= 200 && httpCode < 300);
   if (result.status && options.keyword) {
-    result.status = result.body.indexOf(options.keyword) > -1;
+    const body = typeof result.body === 'undefined' ? '' : result.body;
+    result.status = body.indexOf(options.keyword) > -1;
   }
 
   return result;

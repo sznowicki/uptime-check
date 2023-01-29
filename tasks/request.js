@@ -57,7 +57,7 @@ const makeRequest = async (options) => {
     redirectsCount: response.request.redirects.length,
     headers: response.headers,
     body: response.body,
-    bodySize: response.body.length,
+    bodySize: response.body ? response.body.length : 0,
     errorCode: response.errorCode,
   };
 
