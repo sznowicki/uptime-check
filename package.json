@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/sznowicki/uptime-check#readme",
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^29.4.1"
   },
   "dependencies": {
     "got": "^11.8.2"
