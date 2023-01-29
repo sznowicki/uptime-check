@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.2.0
+- Fixed type error when response.body is undefined
+- Dependency update (got)
+-
 ## v4.1.0
 ### Dependency removed
 - Removed `header-parse` unused dependency.
