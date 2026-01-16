@@ -1,6 +1,10 @@
 # Uptime check
 [![npm version](https://badge.fury.io/js/uptime-check.svg)](https://badge.fury.io/js/uptime-check) [![Coverage Status](https://coveralls.io/repos/github/sznowicki/uptime-check/badge.svg?branch=master)](https://coveralls.io/github/sznowicki/uptime-check?branch=master)
 
+## MOVED TO CODEBERG
+Repository moved to Codeberg
+[https://codeberg.org/sznowicki/uptime-check](https://codeberg.org/sznowicki/uptime-check)
+
 Checks uptime status of given url and provided keyword (optional).
 
 ## How it works
